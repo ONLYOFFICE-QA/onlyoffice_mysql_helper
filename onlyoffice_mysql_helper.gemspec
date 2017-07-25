@@ -14,6 +14,8 @@ Gem::Specification.new do |spec|
 
   spec.files = `git ls-files lib LICENSE.txt README.md`.split($RS)
   spec.require_paths = ['lib']
+  spec.add_runtime_dependency('mysql2', '~> 0')
+  spec.add_runtime_dependency('onlyoffice_logger_helper', '~> 1')
 
   spec.license = 'AGPL-3.0'
 end
