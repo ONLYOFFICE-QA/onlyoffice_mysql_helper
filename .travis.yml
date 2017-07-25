@@ -5,3 +5,7 @@ rvm:
   - 2.4.1
   - 2.1.10
 before_install: gem install bundler -v 1.15.1
+services:
+  - mysql
+before_script:
+  - mysql -u root -e 'CREATE DATABASE test_by_spec;'
