@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe 'mysql' do
+RSpec.describe OnlyofficeMysqlHelper::MySQLHelper do
   table_name = 'test'
   column_name = 'test_data'
   record_string = nil
