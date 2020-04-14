@@ -3,7 +3,6 @@
 require 'spec_helper'
 
 RSpec.describe 'mysql' do
-  mysql = OnlyofficeMysqlHelper::MySQLHelper.new(database: 'test_by_spec')
   table_name = 'test'
   column_name = 'test_data'
   record_string = nil

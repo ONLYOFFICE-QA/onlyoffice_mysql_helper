@@ -20,3 +20,7 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
+
+def mysql
+  @mysql ||= OnlyofficeMysqlHelper::MySQLHelper.new(database: 'test_by_spec')
+end
