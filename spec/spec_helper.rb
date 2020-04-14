@@ -46,3 +46,8 @@ def get_records(table, column)
   mysql.select_records(table)
        .map { |row| row[column] }
 end
+
+# @return [String] name of table for log
+def log_table
+  'log_table'
+end
