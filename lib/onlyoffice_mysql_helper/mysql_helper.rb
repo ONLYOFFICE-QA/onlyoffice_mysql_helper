@@ -10,9 +10,13 @@ module OnlyofficeMysqlHelper
     SQL_SERVER_USER_LOCAL = 'root'
     SQL_SERVER_PASSWORD_LOCAL = ''
 
-    def initialize(address: SQL_SERVER_ADDRESS_LOCAL, database: 'performance_test',
-                   user: SQL_SERVER_USER_LOCAL, password: SQL_SERVER_PASSWORD_LOCAL)
-      @connection = Mysql2::Client.new(host: address, username: user, password: password, database: database)
+    def initialize(address: SQL_SERVER_ADDRESS_LOCAL,
+                   database: 'performance_test',
+                   user: SQL_SERVER_USER_LOCAL,
+                   password: SQL_SERVER_PASSWORD_LOCAL)
+      @connection = Mysql2::Client.new(host: address,
+                                       username: user,
+                                       password: password, database: database)
       @database = database
     end
 
