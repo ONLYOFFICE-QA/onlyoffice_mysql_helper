@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 require 'mysql2'
 module OnlyofficeMysqlHelper
   # Class for using mysql
   class MySQLHelper
     attr_accessor :mysql
     attr_accessor :database
-    SQL_SERVER_ADDRESS_LOCAL = '127.0.0.1'.freeze
-    SQL_SERVER_USER_LOCAL = 'root'.freeze
-    SQL_SERVER_PASSWORD_LOCAL = ''.freeze
+    SQL_SERVER_ADDRESS_LOCAL = '127.0.0.1'
+    SQL_SERVER_USER_LOCAL = 'root'
+    SQL_SERVER_PASSWORD_LOCAL = ''
 
     def initialize(address: SQL_SERVER_ADDRESS_LOCAL, database: 'performance_test',
                    user: SQL_SERVER_USER_LOCAL, password: SQL_SERVER_PASSWORD_LOCAL)
