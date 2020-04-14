@@ -31,6 +31,6 @@ RSpec.describe OnlyofficeMysqlHelper::MySQLHelper do
     create_table
     add_record
     mysql.delete_record(table_name, "test_data = '#{record_string}'")
-    expect(mysql.select_records(table_name).map { |row| row[column_name] }).to_not include(record_string)
+    expect(mysql.select_records(table_name).map { |row| row[column_name] }).not_to include(record_string)
   end
 end
