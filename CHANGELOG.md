@@ -5,6 +5,7 @@
 ### New Features
 
 * Add `MySQLLogger` class
+* Add rake task for releasing gem on github
 
 ### Changes
 
