@@ -10,3 +10,7 @@
 
 * Rename `get_tables` to `tables`
 * Cleanup gemspec
+
+### Fixes
+
+* Fix calculating coverage if running locally
