@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'simplecov'
 SimpleCov.start
 
@@ -17,4 +19,30 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+end
+
+def mysql
+  @mysql ||= OnlyofficeMysqlHelper::MySQLHelper.new(database: 'test_by_spec')
+end
+
+def table_to_drop
+  'Tables_in_test_by_spec'
+end
+
+def create_table_command
+  'id INT PRIMARY KEY AUTO_INCREMENT, '\
+  "#{test_column} VARCHAR(25) NOT NULL"
+end
+
+def test_table
+  'test'
+end
+
+def test_column
+  'test_data'
+end
+
+def get_records(table, column)
+  mysql.select_records(table)
+       .map { |row| row[column] }
 end

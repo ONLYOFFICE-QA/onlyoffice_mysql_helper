@@ -1,35 +1,29 @@
+# frozen_string_literal: true
+
 require 'mysql2'
 module OnlyofficeMysqlHelper
   # Class for using mysql
   class MySQLHelper
     attr_accessor :mysql
     attr_accessor :database
-    SQL_SERVER_ADDRESS_LOCAL = '127.0.0.1'.freeze
-    SQL_SERVER_USER_LOCAL = 'root'.freeze
-    SQL_SERVER_PASSWORD_LOCAL = ''.freeze
+    SQL_SERVER_ADDRESS_LOCAL = '127.0.0.1'
+    SQL_SERVER_USER_LOCAL = 'root'
+    SQL_SERVER_PASSWORD_LOCAL = ''
 
-    def initialize(address: SQL_SERVER_ADDRESS_LOCAL, database: 'performance_test',
-                   user: SQL_SERVER_USER_LOCAL, password: SQL_SERVER_PASSWORD_LOCAL)
-      @connection = Mysql2::Client.new(host: address, username: user, password: password, database: database)
+    def initialize(address: SQL_SERVER_ADDRESS_LOCAL,
+                   database: 'performance_test',
+                   user: SQL_SERVER_USER_LOCAL,
+                   password: SQL_SERVER_PASSWORD_LOCAL)
+      @connection = Mysql2::Client.new(host: address,
+                                       username: user,
+                                       password: password, database: database)
       @database = database
     end
 
     def add_record(table_name, hash)
       send_query do
-        query_insert_into = "INSERT INTO `#{table_name}` (`id`, "
-        query_keys = ''
-        hash.keys.each do |key_value|
-          query_keys += "`#{key_value}`,"
-        end
-        query_keys.chop!
-        query_into_values = ') VALUES (NULL,'
-        query_values = ''
-        hash.values.each do |value|
-          query_values += "'#{value.to_s.delete("'")}',"
-        end
-        query_values.chop!
-        query_end = ');'
-        query_insert_into + query_keys + query_into_values + query_values + query_end
+        "INSERT INTO `#{table_name}` (`id`, #{from_query_keys(hash)}) "\
+        "VALUES (NULL,#{from_query_values(hash)});"
       end
     end
 
@@ -45,7 +39,7 @@ module OnlyofficeMysqlHelper
       end
     end
 
-    def get_tables
+    def tables
       send_query { 'SHOW TABLES;' }
     end
 
@@ -63,6 +57,22 @@ module OnlyofficeMysqlHelper
       yield
       OnlyofficeLoggerHelper.log("Query: #{yield}")
       @connection.query(yield)
+    end
+
+    def from_query_keys(hash)
+      query_keys = ''
+      hash.each_key do |key_value|
+        query_keys += "`#{key_value}`,"
+      end
+      query_keys.chop!
+    end
+
+    def from_query_values(hash)
+      query_values = ''
+      hash.each_value do |value|
+        query_values += "'#{value.to_s.delete("'")}',"
+      end
+      query_values.chop!
     end
   end
 end
