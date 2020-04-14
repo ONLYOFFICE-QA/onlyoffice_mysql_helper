@@ -20,13 +20,13 @@ module OnlyofficeMysqlHelper
       send_query do
         query_insert_into = "INSERT INTO `#{table_name}` (`id`, "
         query_keys = ''
-        hash.keys.each do |key_value|
+        hash.each_key do |key_value|
           query_keys += "`#{key_value}`,"
         end
         query_keys.chop!
         query_into_values = ') VALUES (NULL,'
         query_values = ''
-        hash.values.each do |value|
+        hash.each_value do |value|
           query_values += "'#{value.to_s.delete("'")}',"
         end
         query_values.chop!

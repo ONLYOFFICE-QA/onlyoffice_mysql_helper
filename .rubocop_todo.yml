@@ -46,12 +46,6 @@ Style/ExpandPathArguments:
   Exclude:
     - 'onlyoffice_mysql_helper.gemspec'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-Style/HashEachMethods:
-  Exclude:
-    - 'lib/onlyoffice_mysql_helper/mysql_helper.rb'
-
 # Offense count: 9
 # Cop supports --auto-correct.
 # Configuration parameters: AutoCorrect, AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
