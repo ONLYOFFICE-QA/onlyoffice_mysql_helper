@@ -35,7 +35,7 @@ module OnlyofficeMysqlHelper
       end
     end
 
-    def get_tables
+    def tables
       send_query { 'SHOW TABLES;' }
     end
 

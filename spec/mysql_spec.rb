@@ -11,12 +11,12 @@ RSpec.describe 'mysql' do
   let(:add_record) { mysql.add_record(table_name, test_data: record_string) }
 
   before do
-    mysql.get_tables.each { |table| mysql.drop_table(table['Tables_in_test_by_spec']) }
+    mysql.tablse.each { |table| mysql.drop_table(table['Tables_in_test_by_spec']) }
   end
 
   it 'create_table' do
     create_table
-    expect(mysql.get_tables.map { |table| table['Tables_in_test_by_spec'] }.include?(table_name)).to be true
+    expect(mysql.tables.map { |table| table['Tables_in_test_by_spec'] }.include?(table_name)).to be true
   end
 
   it 'add_record' do
