@@ -40,12 +40,6 @@ RSpec/NotToNot:
   Exclude:
     - 'spec/mysql_spec.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/ExpandPathArguments:
-  Exclude:
-    - 'onlyoffice_mysql_helper.gemspec'
-
 # Offense count: 9
 # Cop supports --auto-correct.
 # Configuration parameters: AutoCorrect, AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
