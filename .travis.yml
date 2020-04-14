@@ -10,3 +10,7 @@ services:
   - mysql
 before_script:
   - mysql -u root -e 'CREATE DATABASE test_by_spec;'
+script:
+  - npm install -g markdownlint-cli
+  - markdownlint *.md
+  - rake
