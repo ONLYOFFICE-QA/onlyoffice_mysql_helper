@@ -12,11 +12,15 @@ gem 'onlyoffice_mysql_helper'
 
 And then execute:
 
-    bundle
+```shell script
+bundle
+```
 
 Or install it yourself as:
 
-    gem install onlyoffice_mysql_helper
+```shell script
+gem install onlyoffice_mysql_helper
+```
 
 ## Usage
 
