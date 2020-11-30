@@ -27,7 +27,8 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby }}
     - name: Build and test with Rake
-      DB_PORT: ${{ job.services.mysql.ports[3306] }}
+      env:
+        DB_PORT: ${{ job.services.mysql.ports[3306] }}
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
