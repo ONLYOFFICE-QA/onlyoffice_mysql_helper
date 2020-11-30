@@ -18,7 +18,10 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby }}
     - name: Init db for tests
-      run: mysql -u root -e 'CREATE DATABASE test_by_spec;'
+      run: |
+        sudo apt-get -y update
+        sudo apt-get -y install mysql-server
+        mysql -u root -e 'CREATE DATABASE test_by_spec;'
     - name: Build and test with Rake
       run: |
         gem install bundler
