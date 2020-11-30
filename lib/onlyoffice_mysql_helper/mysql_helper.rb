@@ -38,7 +38,7 @@ module OnlyofficeMysqlHelper
       send_query do
         query = "SELECT * FROM `#{table_name}`"
         query += " #{condition}" unless condition == ''
-        query + ';'
+        "#{query};"
       end
     end
 

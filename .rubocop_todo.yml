@@ -22,9 +22,3 @@ Style/AccessorGrouping:
   Exclude:
     - 'lib/onlyoffice_mysql_helper/mysql_helper.rb'
     - 'lib/onlyoffice_mysql_helper/mysql_logger.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/StringConcatenation:
-  Exclude:
-    - 'lib/onlyoffice_mysql_helper/mysql_helper.rb'
