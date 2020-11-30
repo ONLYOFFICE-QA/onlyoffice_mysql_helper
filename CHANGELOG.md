@@ -7,6 +7,7 @@
 * Add ability to set port via ENV `DB_PORT`
 * Add `rubocop` check in CI
 * Add `rubocop-rake` support
+* Add `dependabot` config
 
 ### Fixes
 
