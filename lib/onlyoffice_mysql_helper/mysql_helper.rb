@@ -14,8 +14,9 @@ module OnlyofficeMysqlHelper
                    database: 'performance_test',
                    user: SQL_SERVER_USER_LOCAL,
                    password: SQL_SERVER_PASSWORD_LOCAL)
+      port = ENV['DB_PORT'] || 3306
       @connection = Mysql2::Client.new(host: address,
-                                       port: default_mysql_port,
+                                       port: port,
                                        username: user,
                                        password: password,
                                        database: database)
@@ -75,13 +76,6 @@ module OnlyofficeMysqlHelper
         query_values += "'#{value.to_s.delete("'")}',"
       end
       query_values.chop!
-    end
-
-    # @return [Integer] default mysql port
-    def default_mysql_port
-      return ENV['DB_PORT'] if ENV['DB_PORT']
-
-      3306
     end
   end
 end
