@@ -6,6 +6,7 @@ module OnlyofficeMysqlHelper
   class MySQLHelper
     attr_accessor :mysql
     attr_accessor :database
+
     SQL_SERVER_ADDRESS_LOCAL = '127.0.0.1'
     SQL_SERVER_USER_LOCAL = 'root'
     SQL_SERVER_PASSWORD_LOCAL = ''
