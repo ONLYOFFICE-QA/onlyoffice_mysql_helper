@@ -4,8 +4,9 @@ require 'mysql2'
 module OnlyofficeMysqlHelper
   # Class for using mysql
   class MySQLHelper
-    attr_accessor :mysql
+    # @return [String] database name
     attr_accessor :database
+
     SQL_SERVER_ADDRESS_LOCAL = '127.0.0.1'
     SQL_SERVER_USER_LOCAL = 'root'
     SQL_SERVER_PASSWORD_LOCAL = ''
@@ -38,7 +39,7 @@ module OnlyofficeMysqlHelper
       send_query do
         query = "SELECT * FROM `#{table_name}`"
         query += " #{condition}" unless condition == ''
-        query + ';'
+        "#{query};"
       end
     end
 
