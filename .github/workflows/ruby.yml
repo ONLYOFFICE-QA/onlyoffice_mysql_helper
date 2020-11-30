@@ -4,6 +4,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.allow-failures }}
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_DATABASE: test_by_spec
+        ports:
+          - 3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     strategy:
       matrix:
         ruby: [2.5, 2.6, 2.7]
@@ -17,12 +26,8 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
-    - name: Init db for tests
-      run: |
-        sudo apt-get -y update
-        sudo apt-get -y install mysql-server
-        mysql -u root -e 'CREATE DATABASE test_by_spec;'
     - name: Build and test with Rake
+      DB_PORT: ${{ job.services.mysql.ports[3306] }}
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
