@@ -3,8 +3,11 @@
 module OnlyofficeMysqlHelper
   # Log action in mysql
   class MySQLLogger
+    # @return [MySQLHelper] instance of helper
     attr_accessor :mysql
+    # @return [String] table name
     attr_accessor :table
+    # @return [Hash] hash to add to DB
     attr_accessor :hash
 
     def initialize(mysql = MySQLHelper.new, table = nil, hash = {})

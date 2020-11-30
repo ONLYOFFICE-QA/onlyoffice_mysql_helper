@@ -4,7 +4,7 @@ require 'mysql2'
 module OnlyofficeMysqlHelper
   # Class for using mysql
   class MySQLHelper
-    attr_accessor :mysql
+    # @return [String] database name
     attr_accessor :database
 
     SQL_SERVER_ADDRESS_LOCAL = '127.0.0.1'
