@@ -30,6 +30,7 @@ jobs:
       env:
         DB_PORT: ${{ job.services.mysql.ports[3306] }}
       run: |
+        echo $DB_PORT
         gem install bundler
         bundle install --jobs 4 --retry 3
         bundle exec rake
