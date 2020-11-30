@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### New Features
+
+* Add ability to set port via ENV `DB_PORT`
+
 ### Changes
 
 * Use GitHub Actions instead of TravisCI
