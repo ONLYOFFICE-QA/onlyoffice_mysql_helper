@@ -1,0 +1,41 @@
+name: Ruby
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.allow-failures }}
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_DATABASE: test_by_spec
+        ports:
+          - 3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    strategy:
+      matrix:
+        ruby: [2.5, 2.6, 2.7]
+        allow-failures: [false]
+        include:
+          - ruby: head
+            allow-failures: true
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby ${{ matrix.ruby }}
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby }}
+    - name: Build and test with Rake
+      env:
+        DB_PORT: ${{ job.services.mysql.ports[3306] }}
+      run: |
+        echo $DB_PORT
+        gem install bundler
+        bundle install --jobs 4 --retry 3
+        bundle exec rake
+    - uses: actions/setup-node@v1
+    - name: Check markdown files using `markdownlint`
+      run: |
+        npm install -g markdownlint-cli
+        markdownlint *.md
