@@ -14,6 +14,7 @@
 
 * Use GitHub Actions instead of TravisCI
 * Drop support of rubies earlier, than 2.5
+* Freeze dependencies versions in `Gemfile.lock`
 
 ## 0.1.0 (2020-04-14)
 
