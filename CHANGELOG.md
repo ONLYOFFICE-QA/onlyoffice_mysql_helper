@@ -8,6 +8,7 @@
 * Add `rubocop` check in CI
 * Add `rubocop-rake` support
 * Add `dependabot` config
+* Add CI check that code is 100% documented
 
 ### Fixes
 
@@ -19,6 +20,7 @@
 * Drop support of rubies earlier, than 2.5
 * Freeze dependencies versions in `Gemfile.lock`
 * Fixes from update `rubocop` to 1.4.2
+* Add all missing documentation
 
 ## 0.1.0 (2020-04-14)
 
