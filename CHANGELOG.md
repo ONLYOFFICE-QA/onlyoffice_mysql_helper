@@ -22,6 +22,7 @@
 * Freeze dependencies versions in `Gemfile.lock`
 * Fixes from update `rubocop` to 1.4.2
 * Add all missing documentation
+* Moved repo to `ONLYOFFICE-QA` org
 
 ## 0.1.0 (2020-04-14)
 
