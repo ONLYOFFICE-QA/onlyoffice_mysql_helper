@@ -2,6 +2,8 @@
 
 ## master (unreleased)
 
+## 0.2.0 (2020-12-03)
+
 ### New Features
 
 * Add ability to set port via ENV `DB_PORT`
