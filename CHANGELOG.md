@@ -8,6 +8,7 @@
 * Add `rubocop` check in CI
 * Add `rubocop-rake` support
 * Add `dependabot` config
+* Add CI check that code is 100% documented
 
 ### Fixes
 
