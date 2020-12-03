@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.email = %w[shockwavenn@gmail.com]
   s.summary = 'Simple MySQL wrapper'
   s.description = 'Simple MySQL wrapper. Used in QA of ONLYOFFICE'
-  s.homepage = "https://github.com/onlyoffice-testing-robot/#{s.name}"
+  s.homepage = "https://github.com/ONLYOFFICE-QA/#{s.name}"
   s.metadata = {
     'bug_tracker_uri' => "#{s.homepage}/issues",
     'changelog_uri' => "#{s.homepage}/blob/master/CHANGELOG.md",
