@@ -7,8 +7,11 @@ module OnlyofficeMysqlHelper
     # @return [String] database name
     attr_accessor :database
 
+    # @return [String] default sql address
     SQL_SERVER_ADDRESS_LOCAL = '127.0.0.1'
+    # @return [String] default sql user
     SQL_SERVER_USER_LOCAL = 'root'
+    # @return [String] default sql password
     SQL_SERVER_PASSWORD_LOCAL = ''
 
     def initialize(address: SQL_SERVER_ADDRESS_LOCAL,
@@ -24,6 +27,10 @@ module OnlyofficeMysqlHelper
       @database = database
     end
 
+    # Add hash record to table
+    # @param [String] table_name to add hash
+    # @param [Hash] hash to add
+    # @return [nil]
     def add_record(table_name, hash)
       send_query do
         "INSERT INTO `#{table_name}` (`id`, #{from_query_keys(hash)}) "\
@@ -31,10 +38,18 @@ module OnlyofficeMysqlHelper
       end
     end
 
+    # Create specific table if not exists
+    # @param [String] name of table
+    # @param [String] columns of table
+    # @return [nil]
     def create_table(name, columns = 'id INT PRIMARY KEY AUTO_INCREMENT')
       send_query { "CREATE TABLE IF NOT EXISTS `#{name}`(#{columns});" }
     end
 
+    # Select table records
+    # @param [String] table_name of table
+    # @param [String] condition to filter
+    # @return [Object] result of select
     def select_records(table_name, condition = '')
       send_query do
         query = "SELECT * FROM `#{table_name}`"
@@ -43,14 +58,23 @@ module OnlyofficeMysqlHelper
       end
     end
 
+    # List all tables in base
+    # @return [Object] table list
     def tables
       send_query { 'SHOW TABLES;' }
     end
 
+    # Delete record by condition
+    # @param [String] table_name of table
+    # @param [String] condition to delete
+    # @return [nil]
     def delete_record(table_name, condition)
       send_query { "DELETE FROM `#{table_name}` WHERE #{condition};" }
     end
 
+    # Drop whole table
+    # @param [String] table_name of table
+    # @return [nil]
     def drop_table(table_name)
       send_query { "DROP TABLE `#{table_name}`;" }
     end

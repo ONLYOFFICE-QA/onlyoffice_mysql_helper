@@ -27,6 +27,10 @@ module OnlyofficeMysqlHelper
       @mysql.create_table(table_name, table_command)
     end
 
+    # Log ant actions in DB
+    # @param [String] action name for log
+    # @param [Hash] hash with additional options
+    # @return [nil]
     def log_actions(action, hash)
       mysql_hash = hash.merge(@hash)
       mysql_hash[:time] = Time.now
