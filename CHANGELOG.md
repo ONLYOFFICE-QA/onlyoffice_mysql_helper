@@ -13,6 +13,7 @@
 ### Fixes
 
 * Add missing `markdownlint` config
+* Fix `rake release_github_rubygems` task to use `sh` calls
 
 ### Changes
 
