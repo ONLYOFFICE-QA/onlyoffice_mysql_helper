@@ -24,7 +24,6 @@ Gem::Specification.new do |s|
   s.license = 'AGPL-3.0'
   s.add_runtime_dependency('mysql2', '~> 0')
   s.add_runtime_dependency('onlyoffice_logger_helper', '~> 1')
-  s.add_development_dependency('codecov', '~> 0')
   s.add_development_dependency('overcommit', '~> 0')
   s.add_development_dependency('rake', '~> 13')
   s.add_development_dependency('rspec', '~> 3')
@@ -32,5 +31,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency('rubocop-performance', '~> 1')
   s.add_development_dependency('rubocop-rake', '~> 0')
   s.add_development_dependency('rubocop-rspec', '~> 2')
+  s.add_development_dependency('simplecov', '~> 0')
   s.add_development_dependency('yard', '>= 0.9.20')
 end

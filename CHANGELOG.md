@@ -2,6 +2,14 @@
 
 ## master (unreleased)
 
+### New Features
+
+* Check 100% code coverage in CI
+
+### Changes
+
+* Remove `codecov` dependency
+
 ## 0.2.0 (2020-12-03)
 
 ### New Features
