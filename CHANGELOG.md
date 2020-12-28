@@ -5,6 +5,7 @@
 ### New Features
 
 * Check 100% code coverage in CI
+* Add `ruby-3.0` to CI
 
 ### Changes
 
