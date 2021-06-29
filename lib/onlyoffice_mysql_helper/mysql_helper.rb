@@ -34,7 +34,7 @@ module OnlyofficeMysqlHelper
     def add_record(table_name, hash)
       send_query do
         "INSERT INTO `#{table_name}` (`id`, #{from_query_keys(hash)}) "\
-        "VALUES (NULL,#{from_query_values(hash)});"
+          "VALUES (NULL,#{from_query_values(hash)});"
       end
     end
 
