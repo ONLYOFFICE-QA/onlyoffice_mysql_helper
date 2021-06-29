@@ -31,7 +31,7 @@ end
 # @return [String] command to test table creation
 def create_table_command
   'id INT PRIMARY KEY AUTO_INCREMENT, '\
-  "#{test_column} VARCHAR(25) NOT NULL"
+    "#{test_column} VARCHAR(25) NOT NULL"
 end
 
 # @return [String] name of test table
