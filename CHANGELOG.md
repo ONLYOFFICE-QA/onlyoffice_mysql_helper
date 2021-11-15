@@ -2,6 +2,8 @@
 
 ## master (unreleased)
 
+## 0.3.0 (2021-15-11)
+
 ### New Features
 
 * Check 100% code coverage in CI
