@@ -18,7 +18,7 @@ module OnlyofficeMysqlHelper
                    database: 'performance_test',
                    user: SQL_SERVER_USER_LOCAL,
                    password: SQL_SERVER_PASSWORD_LOCAL)
-      port = ENV['DB_PORT'] || 3306
+      port = ENV.fetch('DB_PORT', 3306)
       @connection = Mysql2::Client.new(host: address,
                                        port: port,
                                        username: user,
