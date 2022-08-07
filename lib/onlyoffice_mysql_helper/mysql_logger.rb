@@ -20,9 +20,9 @@ module OnlyofficeMysqlHelper
     # @param table_name [String] name of table to create
     # @return [Void]
     def create_log_table(table_name, column)
-      table_command = 'id INT PRIMARY KEY AUTO_INCREMENT, '\
-                      "#{column} VARCHAR(25) NOT NULL, "\
-                      'time VARCHAR(255) NOT NULL, '\
+      table_command = 'id INT PRIMARY KEY AUTO_INCREMENT, ' \
+                      "#{column} VARCHAR(25) NOT NULL, " \
+                      'time VARCHAR(255) NOT NULL, ' \
                       'operation VARCHAR(255) NOT NULL'
       @mysql.create_table(table_name, table_command)
     end
