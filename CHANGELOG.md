@@ -18,6 +18,7 @@
 * Changes from `rubocop-rspec` update to 2.9.0
 * Fix `rubocop-1.28.1` code issues
 * Drop `ruby-2.6`, `ruby-2.7` support, since it's EOL'ed
+* Use `mysql:8` as docker base for CI
 
 ## 0.3.0 (2021-15-11)
 
