@@ -6,7 +6,7 @@ jobs:
     continue-on-error: ${{ matrix.allow-failures }}
     services:
       mysql:
-        image: mysql:5.7
+        image: mysql:8
         env:
           MYSQL_ALLOW_EMPTY_PASSWORD: true
           MYSQL_DATABASE: test_by_spec
