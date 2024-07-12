@@ -23,6 +23,6 @@ Gem::Specification.new do |s|
   }
   s.files = Dir['lib/**/*']
   s.license = 'AGPL-3.0'
-  s.add_runtime_dependency('mysql2', '~> 0')
-  s.add_runtime_dependency('onlyoffice_logger_helper', '~> 1')
+  s.add_dependency('mysql2', '~> 0')
+  s.add_dependency('onlyoffice_logger_helper', '~> 1')
 end
