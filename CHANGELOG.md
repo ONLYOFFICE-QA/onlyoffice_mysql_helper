@@ -22,6 +22,7 @@
 * Drop `ruby-2.6`, `ruby-2.7` support, since it's EOL'ed
 * Use `mysql:8` as docker base for CI
 * Fix `rubocop-1.65.0` cop `Gemspec/AddRuntimeDependency`
+* Add `bigdecimal` dependency, to be compatible with `ruby-3.4`
 
 ## 0.3.0 (2021-15-11)
 
