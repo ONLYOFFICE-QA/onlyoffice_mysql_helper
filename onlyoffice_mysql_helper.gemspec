@@ -23,6 +23,8 @@ Gem::Specification.new do |s|
   }
   s.files = Dir['lib/**/*']
   s.license = 'AGPL-3.0'
+  # Until https://github.com/brianmario/mysql2/pull/1367 is released
+  s.add_dependency('bigdecimal', '~> 3')
   s.add_dependency('mysql2', '~> 0')
   s.add_dependency('onlyoffice_logger_helper', '~> 1')
 end

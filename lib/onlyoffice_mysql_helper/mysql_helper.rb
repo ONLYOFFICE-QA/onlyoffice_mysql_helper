@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'bigdecimal'
 require 'mysql2'
 module OnlyofficeMysqlHelper
   # Class for using mysql
