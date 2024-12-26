@@ -6,6 +6,7 @@
 
 * Add `ruby-3.1`, `ruby-3.2` in CI
 * Add `ruby-3.3` to CI
+* Add `ruby-3.4` to CI
 * Add `yamllint` check in CI
 * Add `dependabot` check for `GitHub Actions`
 
@@ -23,6 +24,7 @@
 * Use `mysql:8` as docker base for CI
 * Fix `rubocop-1.65.0` cop `Gemspec/AddRuntimeDependency`
 * Add `bigdecimal` dependency, to be compatible with `ruby-3.4`
+* Remove `ruby-3.0` from CI, since it's EOLed
 
 ## 0.3.0 (2021-15-11)
 
